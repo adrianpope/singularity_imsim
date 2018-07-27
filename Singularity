@@ -13,3 +13,4 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
 %runscript
   cd ${SINGULARITY_ROOTFS}/home
   eups list
+
