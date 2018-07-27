@@ -14,7 +14,9 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    cd /DC2
    git clone https://github.com/lsst/sims_GalSimInterface.git
    git clone https://github.com/LSSTDESC/imSim.git
+   set +e
    setup -r sims_GalSimInterface -j
+   set -e
    setup -r imSim -j
    cd sims_GalSimInterface
    scons
