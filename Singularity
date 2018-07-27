@@ -2,15 +2,23 @@ Bootstrap: docker
 From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
 
 %setup
-  echo ${SINGULARITY_ROOTFS}
-  mkdir ${SINGULARITY_ROOTFS}/home
+   echo ${SINGULARITY_ROOTFS}
+   mkdir ${SINGULARITY_ROOTFS}/DC2
 
 %post
-  source scl_source enable devtoolset-6 &&\
-  source /opt/lsst/software/stack/loadLSST.bash &&\
-  setup lsst_apps &&\
+   source scl_source enable devtoolset-6
+   source /opt/lsst/software/stack/loadLSST.bash
+   setup lsst_apps
+   cd /DC2
+   git clone https://github.com/lsst/sims_GalSimInterface.git
+   git clone https://github.com/LSSTDESC/imSim.git
+   setup -r sims_GalSimInterface -j
+   setup -r imSim -j
+   cd sims_GalSimInterface
+   scons
+   cd ../imSim
+   scons
 
 %runscript
-  cd ${SINGULARITY_ROOTFS}/home
-  eups list
-
+   cd /DC2/imSim
+   py.test
