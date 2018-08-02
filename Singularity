@@ -7,7 +7,6 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    set -e
    source /opt/lsst/software/stack/loadLSST.bash
    setup lsst_sims
-   umask 0000
    mkdir /DC2
    cd /DC2
    git clone https://github.com/lsst/sims_GalSimInterface.git
@@ -20,6 +19,10 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    set -e
    cd ../imSim
    scons
+   cd /
+   chmod -R g+w DC2
+   chmod -R o+w DC2
+   cd /DC2
    #py.test
 
 %runscript
