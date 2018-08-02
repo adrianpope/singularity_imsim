@@ -6,9 +6,9 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    mkdir ${SINGULARITY_ROOTFS}/DC2
 
 %post
-   #set +e
-   #source scl_source enable devtoolset-6
-   #set -e
+   set +e
+   source scl_source enable devtoolset-6
+   set -e
    source /opt/lsst/software/stack/loadLSST.bash
    setup lsst_apps
    cd /DC2
