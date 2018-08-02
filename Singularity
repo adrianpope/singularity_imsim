@@ -10,7 +10,7 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    source scl_source enable devtoolset-6
    set -e
    source /opt/lsst/software/stack/loadLSST.bash
-   setup lsst_apps
+   setup lsst_sims
    cd /DC2
    git clone https://github.com/lsst/sims_GalSimInterface.git
    git clone https://github.com/LSSTDESC/imSim.git
