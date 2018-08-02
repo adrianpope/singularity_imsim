@@ -19,11 +19,9 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    set -e
    cd ../imSim
    scons
-   cd /
-   chmod -R g+w DC2
-   chmod -R o+w DC2
-   cd /DC2
+   #set +e
    #py.test
+   #set -e
 
 %runscript
    
