@@ -23,5 +23,12 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    #py.test
    #set -e
 
+%environment
+   source /opt/lsst/software/stack/loadLSST.bash
+   setup lsst_sims
+   cd /DC2
+   setup -r sims_GalSimInterface -j
+   setup -r imSim -j
+
 %runscript
    
