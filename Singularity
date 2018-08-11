@@ -32,6 +32,7 @@ From: lsstdesc/stack-sims:w_2018_26-sims_2_9_0
    setup -r sims_GalSimInterface -j
    setup -r imSim -j
    cd
+   export OMP_NUM_THREADS=1
 
 %runscript
-   exec OMP_NUM_THREADS=1 python /DC2/ALCF_1.2i/scripts/run_imsim.py "$@"
+   exec python /DC2/ALCF_1.2i/scripts/run_imsim.py "$@"
